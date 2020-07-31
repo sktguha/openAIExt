@@ -37,6 +37,7 @@ function onClick() {
         prompt['Start Sequence'] = document.querySelectorAll('.start-seq-ta')[0].value;
         prompt['Restart Sequence'] = document.querySelectorAll('.restart-seq-ta')[0].value;
         prompt['Stop Sequences'] = [...document.querySelectorAll('.css-1rhbuit-multiValue')].map(e => e.innerText).join(',');
+        prompt['Engine'] = document.getElementsByClassName('model-select')?.[0]?.innerText;
     } catch (e) { console.error('error occurred in extension', e); }
     copyTextToClipboard(JSON.stringify(prompt));
 };
