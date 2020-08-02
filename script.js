@@ -24,7 +24,7 @@ function copyTextToClipboard(text) {
 function onClick() {
     let prompt = {};
     const editor = [...document.getElementsByClassName('editor-container')][0];
-    const boldSpans = [...editor.querySelectorAll('span')].filter(e => e.style.fontWeight);
+    const boldSpans = [...editor.querySelectorAll('span')].filter(e => e.style.fontWeight === "bold");
     prompt['Prompt Text'] = boldSpans.length > 0 ? boldSpans.map(e => e.innerText).join('') : editor.innerText;
     try {
         const sliders = Object.fromEntries([...document.querySelectorAll('.slider-container')]
